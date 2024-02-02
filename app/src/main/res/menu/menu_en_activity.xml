@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Main">
+
+    <item android:id="@+id/menuSesionesActivas"
+        android:title="Sesiones Activas">
+    </item>
+    <item android:id="@+id/menuRegistrarCta"
+        android:title="Crear una cuenta">
+    </item>
+    <item android:id="@+id/menuEliminarCta"
+        android:title="Eliminar cuenta">
+    </item>
+    <item android:id="@+id/menuEditarCuenta"
+        android:title="editar cuenta">
+    </item>
+    <item android:id="@+id/menuSalir"
+        android:title="Cerrar sesion">
+    </item>
+</menu>
