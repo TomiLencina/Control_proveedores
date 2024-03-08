@@ -34,7 +34,6 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-
         if (v.getId() == R.id.btnRegRegistrar) {
             // Código para button1
             Usuario u = new Usuario();
@@ -42,11 +41,17 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
             u.setPassword(pas.getText().toString());
             u.setNombre(nom.getText().toString());
             u.setApellidos(ap.getText().toString());
-            if (!u.isNull()) {
+
+            // Validar que el campo "usuario" contenga "@provedores"
+            if (!u.getUsuario().contains("@proveedores")) {
+                Toast.makeText(this, "Error: Tu usuario debe ser el correo coorporativo", Toast.LENGTH_LONG).show();
+            } else if (!passwordCumpleRequisitos(u.getPassword())) {
+                Toast.makeText(this, "Registro Invalido: La contraseña debe contener letras mayúsculas, minúsculas y números y una longitud mayor a 8 caracteres", Toast.LENGTH_LONG).show();
+            } else if (!u.isNull()) {
                 Toast.makeText(this, "Error: Campos Vacíos", Toast.LENGTH_LONG).show();
             } else if (dao.insertUsuario(u)) {
                 Toast.makeText(this, "Registro Exitoso!!!", Toast.LENGTH_LONG).show();
-                Intent i2=new Intent(Registrar.this ,Main.class);
+                Intent i2 = new Intent(Registrar.this, Main.class);
                 startActivity(i2);
                 finish();
             } else {
@@ -57,9 +62,14 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
             Intent i = new Intent(Registrar.this, Main.class);
             startActivity(i);
             finish();
-
         } else {
             // Otros casos
         }
+    }
+
+    // Función para validar requisitos de contraseña
+    private boolean passwordCumpleRequisitos(String password) {
+        // Verificar que la contraseña contenga al menos una letra mayúscula, una letra minúscula y un número
+        return password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{8,}$");
     }
 }

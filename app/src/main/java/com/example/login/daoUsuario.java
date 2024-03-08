@@ -1,5 +1,11 @@
 package com.example.login;
 
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+
+import android.content.Intent;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -117,6 +123,4 @@ public class daoUsuario {
 
         return (sql.delete("usuario", "id="+id,null)>0);
     }
-
-
 }
