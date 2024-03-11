@@ -26,5 +26,5 @@ Cabe aclarar que cada usuario tendra acceso unicamente a ver/actualizar o elimin
 A diferencia del historial de sesiones activas que todos los user podran ver esta informacion.
 
 Archivo zip:
-
-
+Lo encontraras en la rama main con el nombre de proyecto-final.zip
+Tambien alli encontraras el paso a paso en formato pdf
