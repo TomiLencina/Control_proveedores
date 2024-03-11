@@ -2,7 +2,7 @@
 
 A continuacion presentare mi trabajo construido en Andoid Studio con java, utilizando SQLite como base de datos.
 
-El sistema desarrollado esta pensando para ser la parte que gestiona las compras a proveedores dentro de una empresa multinacional, 
+El sistema desarrollado esta pensando para ser la parte que gestiona las compras a proveedores dentro de una empresa, 
 el principal objetivo es que solo los usuarios autorizados puedan realizar pedidos a proveedores y que estos queden en curso para posteriormente concretar la compra.
 
 De esta forma se tendra control de los pedidos solicitados, los pedidos seran agrupados por rubro, por orden de llegada y seran almacenados en 
@@ -24,4 +24,7 @@ La tabla usuario registrara la informacion de la cuenta, la cual permitira reali
 La tabla proveedores se ira completando cada vez que se agregue un pedido, tambien se podra ver los pedidos, eliminar o actualizar.
 Cabe aclarar que cada usuario tendra acceso unicamente a ver/actualizar o eliminar solo sus propios pedidos, ya que el sistema por medio del ID del usuario filtra esta info por cliente.
 A diferencia del historial de sesiones activas que todos los user podran ver esta informacion.
+
+Archivo zip:
+
 
