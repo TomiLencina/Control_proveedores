@@ -6,6 +6,9 @@
     <item android:id="@+id/menuSesionesActivas"
         android:title="Sesiones Activas">
     </item>
+    <item android:id="@+id/instrucciones"
+        android:title="Instrucciones">
+    </item>
     <item android:id="@+id/menuRegistrarCta"
         android:title="Crear una cuenta">
     </item>
@@ -18,4 +21,5 @@
     <item android:id="@+id/menuSalir"
         android:title="Cerrar sesion">
     </item>
+
 </menu>

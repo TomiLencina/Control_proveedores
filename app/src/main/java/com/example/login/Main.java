@@ -52,7 +52,8 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
                         Usuario ux = dao.getUsuario(u, p);
                         i2.putExtra("id", ux.getId());
                         startActivity(i2);
-                    } else {
+                    }
+                    else {
                         // Login fallido
                         intentosFallidos++;
                         if (intentosFallidos >= 3) {
