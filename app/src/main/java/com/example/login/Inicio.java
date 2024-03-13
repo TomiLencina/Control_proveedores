@@ -34,10 +34,7 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
         nombre = (TextView) findViewById(R.id.nombreUsuario);
         btnMisPedidos = (Button) findViewById(R.id.btnMisPedidos);
         btnAgregarPedidos = (Button) findViewById(R.id.btnAgregarPedidos);
-        //btnEditar = (Button) findViewById(R.id.btnEditar);
-        //btnEliminar = (Button) findViewById(R.id.btnEliminar);
-        //btnMostrar = (Button) findViewById(R.id.btnMostrar);
-        //btnSalir = (Button) findViewById(R.id.btnSalir);
+
         rubro=(EditText) findViewById(R.id.rubro);
         proyecto=(EditText) findViewById(R.id.proyecto);
         producto=(EditText) findViewById(R.id.producto);
@@ -45,10 +42,6 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
 
         btnMisPedidos.setOnClickListener(this);
         btnAgregarPedidos.setOnClickListener(this);
-        //btnEditar.setOnClickListener(this);
-        //btnEliminar.setOnClickListener(this);
-        //btnMostrar.setOnClickListener(this);
-        //btnSalir.setOnClickListener(this);
 
         Bundle b = getIntent().getExtras();
         id = b.getInt("id");
@@ -134,6 +127,14 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    public void instrucciones_video() {
+        Log.d("Instrucciones", "Iniciando actividad de instrucciones");
+        Intent iv = new Intent(Inicio.this, Instrucciones.class);
+        startActivity(iv);
+    }
+
+
+
     @Override public boolean onCreateOptionsMenu(Menu mimenu){
 
         getMenuInflater().inflate(R.menu.menu_en_activity,mimenu);
@@ -169,37 +170,16 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
             return true;
         }
 
+        if (id == R.id.instrucciones) {
+            instrucciones_video();
+            return true;
+        }
 
         return super.onOptionsItemSelected(opcion_menu);
     }
     }
 
 
-    /*@Override
-    public void onClick(View v) {
 
-        if (v.getId() == R.id.mispedidos) {
-            // Código para button1
-            Proveedor p = new Proveedor();
-            p.getIdUsuario();
-            p.setRubro(rubro.getText().toString());
-            p.setProyecto(proyecto.getText().toString());
-            p.setProducto(producto.getText().toString());
-            p.setCantidad(Integer.parseInt(cantidad.getText().toString()));
-            if (!p.isNull()) {
-                Toast.makeText(this, "Error: Campos Vacíos", Toast.LENGTH_LONG).show();
-            } else if (dao.insertProveedor(3,p.rubro,p.proyecto,p.producto,p)) {
-                Toast.makeText(this, "Registro Exitoso!!!", Toast.LENGTH_LONG).show();
-                Intent i2=new Intent(Registrar.this ,Main.class);
-                startActivity(i2);
-                finish();
-            } else {
-                Toast.makeText(this, "Usuario ya Registrado!!!", Toast.LENGTH_LONG).show();
-            }
-
-        } else if (v.getId() == R.id.btnRegCancelar) {
-            Intent i = new Intent(Registrar.this, Main.class);
-            startActivity(i);
-            finish();*/
 
 
